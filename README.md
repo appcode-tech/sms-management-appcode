@@ -1,0 +1,1 @@
+Code repository for sms management re-usable app
