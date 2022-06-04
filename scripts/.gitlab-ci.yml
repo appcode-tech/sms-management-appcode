@@ -61,3 +61,10 @@ covidkit:
   script:
     # Deploy to freshcart
     - TWINE_PASSWORD=${CI_JOB_TOKEN} TWINE_USERNAME=gitlab-ci-token python -m twine upload --repository-url ${CI_API_V4_URL}/projects/28833859/packages/pypi dist/*
+
+calltobiz:
+  stage: deploy
+  needs: ["build"]
+  script:
+    # Deploy to freshcart
+    - TWINE_PASSWORD=${CI_JOB_TOKEN} TWINE_USERNAME=gitlab-ci-token python -m twine upload --repository-url ${CI_API_V4_URL}/projects/34377492/packages/pypi dist/*
