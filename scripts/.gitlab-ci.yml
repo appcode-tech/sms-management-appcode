@@ -68,3 +68,10 @@ calltobiz:
   script:
     # Deploy to freshcart
     - TWINE_PASSWORD=${CI_JOB_TOKEN} TWINE_USERNAME=gitlab-ci-token python -m twine upload --repository-url ${CI_API_V4_URL}/projects/34377492/packages/pypi dist/*
+
+sangam-parivar:
+  stage: deploy
+  needs: ["build"]
+  script:
+    # Deploy to sangam parivar
+    - TWINE_PASSWORD=${CI_JOB_TOKEN} TWINE_USERNAME=gitlab-ci-token python -m twine upload --repository-url ${CI_API_V4_URL}/projects/37990094/packages/pypi dist/*
