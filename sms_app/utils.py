@@ -68,6 +68,6 @@ class SMSMsg91:
 
             headers = { 'authkey': self.authKey, 'content-type': "application/json" }
 
-            payload = '{"sender":"'+ sender_id +'","route":"4","country":"'+ country +'","unicode":"'+ unicode +'","DLT_TE_ID": "'+ DLT_TE_ID +'","sms":[{"message":"' + message + '","to": '+ self.mobile +'}]}'
+            payload = '{"sender":"'+ sender_id +'","route":"4","country":"'+ country +'","unicode":"'+ unicode +'","DLT_TE_ID": "'+ DLT_TE_ID +'","sms":[{"message":"' + message + '","to": ['+ str(self.mobile) +']}]}'
             response = requests.request("POST", url, headers=headers, data=payload)
             return response.text
